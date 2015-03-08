@@ -1,19 +1,7 @@
-//
-//  ApiController.swift
-//  Connectpal
-//
-//  Created by Sergei Zinin on 06/03/15.
-//  Copyright (c) 2015 Connectpal. All rights reserved.
-//
-
 import Foundation
 
-protocol APIControllerProtocol {
-    func didReceiveAPIResults(results: NSDictionary)
-}
-
 class APIController {
-    var delegate: APIControllerProtocol?
+    var onDataReceivedCallback: ((NSDictionary) -> ())?
     
     init() {}
     
@@ -39,11 +27,16 @@ class APIController {
                     // If there is an error parsing JSON, print it to the console
                     println("JSON Error \(err!.localizedDescription)")
                 }
-                let results: NSArray = jsonResult["results"] as NSArray
-                self.delegate?.didReceiveAPIResults(jsonResult)
+                self.onDataReceivedCallback?(jsonResult)
             })
             
             task.resume()
         }
     }
+    
+    func onDataReceived(closure: (NSDictionary) -> ()) {
+        onDataReceivedCallback = closure
+    }
 }
+
+let api = APIController()

@@ -8,19 +8,10 @@
 
 import UIKit
 
-class PostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
+class PostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var postsTableView: UITableView?
     
     var postsData = []
-    var api = APIController()
-    
-    func didReceiveAPIResults(results: NSDictionary) {
-        var resultsArr: NSArray = results["results"] as NSArray
-        dispatch_async(dispatch_get_main_queue(), {
-            self.postsData = resultsArr
-            self.postsTableView?.reloadData()
-        })
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postsData.count
@@ -52,7 +43,15 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.delegate = self
+        api.onDataReceived() {
+            var results = $0
+            var resultsArr: NSArray = results["results"] as NSArray
+            dispatch_async(dispatch_get_main_queue(), {
+                self.postsData = resultsArr
+                self.postsTableView?.reloadData()
+            })
+        }
+        
         api.searchItunesFor("JQ Software")
         // Do any additional setup after loading the view, typically from a nib.
     }
