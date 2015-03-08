@@ -14,6 +14,7 @@
 		0D51FB261AA99DAC007D5D3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D51FB251AA99DAC007D5D3A /* Images.xcassets */; };
 		0D51FB291AA99DAC007D5D3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D51FB271AA99DAC007D5D3A /* LaunchScreen.xib */; };
 		0D51FB351AA99DAD007D5D3A /* ConnectpalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51FB341AA99DAD007D5D3A /* ConnectpalTests.swift */; };
+		0D51FB3F1AA9E1D5007D5D3A /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51FB3E1AA9E1D5007D5D3A /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0D51FB2E1AA99DAD007D5D3A /* ConnectpalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectpalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D51FB331AA99DAD007D5D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D51FB341AA99DAD007D5D3A /* ConnectpalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectpalTests.swift; sourceTree = "<group>"; };
+		0D51FB3E1AA9E1D5007D5D3A /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				0D51FB271AA99DAC007D5D3A /* LaunchScreen.xib */,
 				0D51FB1D1AA99DAC007D5D3A /* Connectpal.xcdatamodeld */,
 				0D51FB191AA99DAC007D5D3A /* Supporting Files */,
+				0D51FB3E1AA9E1D5007D5D3A /* APIController.swift */,
 			);
 			path = Connectpal;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D51FB3F1AA9E1D5007D5D3A /* APIController.swift in Sources */,
 				0D51FB211AA99DAC007D5D3A /* PostsViewController.swift in Sources */,
 				0D51FB1F1AA99DAC007D5D3A /* Connectpal.xcdatamodeld in Sources */,
 				0D51FB1C1AA99DAC007D5D3A /* AppDelegate.swift in Sources */,
