@@ -3,6 +3,7 @@ import UIKit
 class PostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var postsTableView: UITableView?
     
+    let kCellIdentifier = "SearchResultCell"
     var postsData = []
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -10,7 +11,7 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
         
         let rowData: NSDictionary = self.postsData[indexPath.row] as NSDictionary
         
