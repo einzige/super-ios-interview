@@ -14,7 +14,7 @@
 		0D51FB291AA99DAC007D5D3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D51FB271AA99DAC007D5D3A /* LaunchScreen.xib */; };
 		0D51FB351AA99DAD007D5D3A /* ConnectpalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51FB341AA99DAD007D5D3A /* ConnectpalTests.swift */; };
 		0D8B95EF1AAEE7F50043A433 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B95EE1AAEE7F50043A433 /* LoginViewController.swift */; };
-		0D8B95F41AAF115B0043A433 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B95F31AAF115B0043A433 /* request.swift */; };
+		0D8B95F41AAF115B0043A433 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B95F31AAF115B0043A433 /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		0D51FB331AA99DAD007D5D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D51FB341AA99DAD007D5D3A /* ConnectpalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectpalTests.swift; sourceTree = "<group>"; };
 		0D8B95EE1AAEE7F50043A433 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		0D8B95F31AAF115B0043A433 /* request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
+		0D8B95F31AAF115B0043A433 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		0D51FB181AA99DAC007D5D3A /* Connectpal */ = {
 			isa = PBXGroup;
 			children = (
-				0D8B95F21AAF114F0043A433 /* api */,
+				0D8B95F31AAF115B0043A433 /* APIRequest.swift */,
 				0D51FB1B1AA99DAC007D5D3A /* AppDelegate.swift */,
 				0D51FB221AA99DAC007D5D3A /* Main.storyboard */,
 				0D51FB251AA99DAC007D5D3A /* Images.xcassets */,
@@ -116,14 +116,6 @@
 				0D51FB331AA99DAD007D5D3A /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0D8B95F21AAF114F0043A433 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				0D8B95F31AAF115B0043A433 /* request.swift */,
-			);
-			name = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D8B95EF1AAEE7F50043A433 /* LoginViewController.swift in Sources */,
-				0D8B95F41AAF115B0043A433 /* request.swift in Sources */,
+				0D8B95F41AAF115B0043A433 /* APIRequest.swift in Sources */,
 				0D51FB1F1AA99DAC007D5D3A /* Connectpal.xcdatamodeld in Sources */,
 				0D51FB1C1AA99DAC007D5D3A /* AppDelegate.swift in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import Connectpal
 
 class ConnectpalTests: XCTestCase {
     
@@ -21,16 +22,7 @@ class ConnectpalTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testBaseUrl() {
+        XCTAssertEqual(APIRequest().baseUrl, "http://localhost:3000/api")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

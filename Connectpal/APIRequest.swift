@@ -8,14 +8,12 @@
 
 import Foundation
 
-class Request {
+public class APIRequest {
     let host = "http://localhost:3000"
     let namespace = "/api"
-    let base_url: String
-   
-    class var x: String { return "fuckoff" }
+    public let baseUrl: String
     
-    init() {
-        self.base_url = host + namespace
+    public init() {
+        self.baseUrl = host + namespace
     }
 }
