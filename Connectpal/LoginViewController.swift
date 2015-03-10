@@ -9,8 +9,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     @IBAction func login() {
-        performSegueWithIdentifier("login_success", sender: self)
+        if emailField.text == "szinin@gmail.com" {
+          performSegueWithIdentifier("login_success", sender: self)
+        }
     }
     
     override func viewDidLoad() {

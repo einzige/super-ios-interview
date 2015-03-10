@@ -52,7 +52,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login" destination="Bmq-K5-0fK" eventType="touchUpInside" id="KNw-5B-7Jl"/>
-                                    <segue destination="lok-NP-KOp" kind="custom" identifier="login_success" id="4h9-ec-ty1"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-kC-NsJ">
@@ -70,6 +69,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MMp-Ql-Wc6"/>
+                    <connections>
+                        <outlet property="emailField" destination="QTQ-kC-NsJ" id="jRc-4Z-yGf"/>
+                        <outlet property="passwordField" destination="jQX-Bb-XCs" id="olN-Lb-3hb"/>
+                        <segue destination="lok-NP-KOp" kind="custom" identifier="login_success" id="Sqm-42-4dW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qN0-Vg-A5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
