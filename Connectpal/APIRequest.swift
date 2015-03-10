@@ -23,7 +23,10 @@ public class APIRequest {
         return APIResponse(data: ["1": "2"])
     }
     
-    public func post(path: String, params: [String: AnyObject]? = nil) -> APIResponse {
+    public func post(path: String, params: [String: AnyObject]) -> APIResponse {
+        postJSON(buildURL(path), data: params) { data, e in
+            
+        }
         return APIResponse(data: ["1": "2"])
     }
     
