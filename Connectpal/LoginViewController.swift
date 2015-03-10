@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        api.resetSession()
         super.viewDidLoad()
     }
 }

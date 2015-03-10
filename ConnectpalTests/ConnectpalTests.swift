@@ -27,7 +27,7 @@ class ConnectpalTests: XCTestCase {
     }
     
     func testResponseWithToken() {
-        var response = APIResponse(data: ["token": "set"])
+        var response = APIResponse(data: ["api_token": "set"])
         
         XCTAssertTrue(response.getToken() == "set")
     }

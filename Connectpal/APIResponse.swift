@@ -24,8 +24,8 @@ public class APIResponse {
     }
     
     public func getToken() -> String? {
-        if data["token"] != nil {
-            return data["token"] as? String
+        if data["api_token"] != nil {
+            return data["api_token"] as? String
         } else {
             return nil
         }
