@@ -29,6 +29,15 @@ class LoginViewController: UIViewController {
     
     private func onLoginFailed() {
         restoreUIAfterLogIn()
+        
+        let alertController = UIAlertController(
+            title: "Failed to Log In",
+            message: "The email or password you entered doesn't appear to belong to an account. Please check your credentials and try again.",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     private func blockUIWithPendingLogIn() {
