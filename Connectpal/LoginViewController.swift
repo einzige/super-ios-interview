@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         logInIndicator.stopAnimating()
         emailField.enabled = true
         passwordField.enabled = true
+        passwordField.text = ""
         logInButton.enabled = true
         logInButton.titleLabel!.text = "Log In"
     }
