@@ -59,12 +59,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0Jd-au-NGY">
+                                <rect key="frame" x="393" y="279" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.53480937880000001" green="0.87143205079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0Jd-au-NGY" firstAttribute="trailing" secondItem="jQX-Bb-XCs" secondAttribute="trailing" id="II6-Q7-W6l"/>
                             <constraint firstAttribute="centerX" secondItem="QTQ-kC-NsJ" secondAttribute="centerX" constant="-0.5" id="RSc-2v-D1a"/>
                             <constraint firstItem="Dap-fP-sCz" firstAttribute="centerX" secondItem="QTQ-kC-NsJ" secondAttribute="centerX" id="n4c-D8-ASs"/>
                             <constraint firstItem="QTQ-kC-NsJ" firstAttribute="centerX" secondItem="jQX-Bb-XCs" secondAttribute="centerX" id="qMl-7T-IY0"/>
+                            <constraint firstItem="0Jd-au-NGY" firstAttribute="centerY" secondItem="izJ-Dr-Mzp" secondAttribute="centerY" constant="-5" id="u1s-h0-1L9"/>
                             <constraint firstItem="izJ-Dr-Mzp" firstAttribute="centerX" secondItem="jQX-Bb-XCs" secondAttribute="centerX" id="vkM-cg-Z2v"/>
                         </constraints>
                     </view>
@@ -72,6 +77,7 @@
                     <connections>
                         <outlet property="emailField" destination="QTQ-kC-NsJ" id="jRc-4Z-yGf"/>
                         <outlet property="logInButton" destination="izJ-Dr-Mzp" id="lq6-k4-ba7"/>
+                        <outlet property="logInIndicator" destination="0Jd-au-NGY" id="a4u-PS-6fE"/>
                         <outlet property="passwordField" destination="jQX-Bb-XCs" id="olN-Lb-3hb"/>
                         <segue destination="lok-NP-KOp" kind="custom" identifier="login_success" id="Sqm-42-4dW"/>
                     </connections>

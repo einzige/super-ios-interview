@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var logInIndicator: UIActivityIndicatorView!
     
     @IBAction func login() {
         blockUIWithPendingLogIn()
@@ -31,6 +32,8 @@ class LoginViewController: UIViewController {
     }
     
     private func blockUIWithPendingLogIn() {
+        logInIndicator.hidden = false
+        logInIndicator.startAnimating()
         emailField.enabled = false
         passwordField.enabled = false
         logInButton.enabled = false
@@ -38,6 +41,8 @@ class LoginViewController: UIViewController {
     }
     
     private func restoreUIAfterLogIn() {
+        logInIndicator.hidden = true
+        logInIndicator.stopAnimating()
         emailField.enabled = true
         passwordField.enabled = true
         logInButton.enabled = true
