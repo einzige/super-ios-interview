@@ -15,11 +15,11 @@ public class APIResponse {
         self.data = data
     }
     
-    public func getData() -> [String: AnyObject]? {
+    public func getData() -> [String: AnyObject] {
         if data["data"] != nil {
-            return data["data"] as? [String: AnyObject]
+            return data["data"] as [String: AnyObject]
         } else {
-            return nil
+            return [String: AnyObject]()
         }
     }
     
