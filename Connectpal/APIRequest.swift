@@ -11,38 +11,26 @@ public class APIRequest {
     }
     
     public func get(path: String, params: [String: AnyObject]? = nil) -> APIResponse {
-//        getJSON(buildURL(path)) { data, e in
-//            var responseData
-//            
-//            if e != nil {
-//                responseData = ["error": e]
-//            } else {
-//                responseData = data
-//            }
-//        }
-        return APIResponse(data: ["1": "2"])
+        return getJSON(buildURL(path))
     }
     
     public func post(path: String, params: [String: AnyObject]) -> APIResponse {
-        postJSON(buildURL(path), data: params) { data, e in
-            
-        }
-        return APIResponse(data: ["1": "2"])
+        return postJSON(buildURL(path), data: params)
     }
     
     private func buildURL(path: String) -> String {
         return (host + namespace + "/" + path).stringByReplacingOccurrencesOfString("//", withString: "/")
     }
     
-    private func getJSON(url: String, callback: ([String: AnyObject], String?) -> Void) {
-        sendRequest(buildHTTPRequest(url), callback)
+    private func getJSON(url: String) -> APIResponse {
+        return sendRequest(buildHTTPRequest(url))
     }
     
-    private func postJSON(url: String, data: AnyObject, callback: ([String: AnyObject], String?) -> Void) {
+    private func postJSON(url: String, data: AnyObject) -> APIResponse {
         let request = buildHTTPRequest(url, type: "POST")
         request.HTTPBody = toJSON(data).dataUsingEncoding(NSUTF8StringEncoding)
-        
-        sendRequest(request, callback)
+    
+        return sendRequest(request)
     }
     
     private func buildHTTPRequest(url: String, type: String = "GET") -> NSMutableURLRequest {
@@ -60,18 +48,20 @@ public class APIRequest {
         return request
     }
     
-    private func sendRequest(request: NSMutableURLRequest, callback: ([String: AnyObject], String?) -> Void) {
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, {
-            data, response, e in
-            
-            if e != nil {
-                callback([String: AnyObject](), e.localizedDescription)
-            } else {
-                callback(self.responseDataToDictionary(data), nil)
-            }
-        })
+    private func sendRequest(request: NSMutableURLRequest) -> APIResponse {
+        var response: NSURLResponse?
+        var e: NSError?
+        let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &e)
         
-        task.resume()
+        if e != nil {
+            return APIResponse(data: ["error": e!.localizedDescription])
+        }
+        
+        if data != nil {
+            return APIResponse(data: responseDataToDictionary(data!))
+        }
+        
+        return APIResponse(data: [String: AnyObject]())
     }
     
     private func responseDataToDictionary(data: NSData) -> [String: AnyObject] {

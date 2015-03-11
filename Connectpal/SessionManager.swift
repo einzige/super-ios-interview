@@ -6,8 +6,6 @@ public class SessionManager {
         onFail: (() -> ())?)
     {
         api.signIn(email, password: password) { (response: APIResponse) in
-            println(response.getData())
-            println(response.getToken())
             if self.isSignedIn() {
                 onSuccess?()
             } else {
