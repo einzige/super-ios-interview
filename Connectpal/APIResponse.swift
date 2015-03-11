@@ -9,7 +9,7 @@
 import Foundation
 
 public class APIResponse {
-    private var data: [String: AnyObject]
+    public var data: [String: AnyObject]
     
     public init(data: [String: AnyObject]) {
         self.data = data

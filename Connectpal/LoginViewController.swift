@@ -9,14 +9,17 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func login() {
-        api.signIn(emailField.text, password: passwordField.text)
+        let signedIn = sessionManager.signIn(emailField.text, password: passwordField.text)
         
-        if emailField.text == "szinin@gmail.com" {
-          performSegueWithIdentifier("login_success", sender: self)
+        if signedIn {
+            performSegueWithIdentifier("login_success", sender: self)
+        } else {
+            
         }
     }
     

@@ -46,7 +46,7 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-Dr-Mzp">
-                                <rect key="frame" x="188" y="291" width="225" height="30"/>
+                                <rect key="frame" x="188" y="293" width="225" height="30"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -59,10 +59,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Invalid email or password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dl-vd-gy5">
+                                <rect key="frame" x="202" y="273" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.080225848228442143" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.53480937880000001" green="0.87143205079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="QTQ-kC-NsJ" secondAttribute="centerX" constant="-0.5" id="RSc-2v-D1a"/>
+                            <constraint firstItem="3Dl-vd-gy5" firstAttribute="centerX" secondItem="Dap-fP-sCz" secondAttribute="centerX" constant="-0.5" id="VfL-w2-xho"/>
                             <constraint firstItem="Dap-fP-sCz" firstAttribute="centerX" secondItem="QTQ-kC-NsJ" secondAttribute="centerX" id="n4c-D8-ASs"/>
                             <constraint firstItem="QTQ-kC-NsJ" firstAttribute="centerX" secondItem="jQX-Bb-XCs" secondAttribute="centerX" id="qMl-7T-IY0"/>
                             <constraint firstItem="izJ-Dr-Mzp" firstAttribute="centerX" secondItem="jQX-Bb-XCs" secondAttribute="centerX" id="vkM-cg-Z2v"/>
@@ -71,6 +78,7 @@
                     <navigationItem key="navigationItem" id="MMp-Ql-Wc6"/>
                     <connections>
                         <outlet property="emailField" destination="QTQ-kC-NsJ" id="jRc-4Z-yGf"/>
+                        <outlet property="errorMessage" destination="3Dl-vd-gy5" id="SqI-lc-yea"/>
                         <outlet property="passwordField" destination="jQX-Bb-XCs" id="olN-Lb-3hb"/>
                         <segue destination="lok-NP-KOp" kind="custom" identifier="login_success" id="Sqm-42-4dW"/>
                     </connections>

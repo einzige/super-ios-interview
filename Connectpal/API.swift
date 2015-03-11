@@ -23,6 +23,10 @@ public class API {
         self.token = nil
     }
     
+    public func isAuthorized() -> Bool {
+        return token != nil
+    }
+    
     private func get(path: String, params: [String: String]) -> APIResponse {
         return request.get(path, params: params)
     }
