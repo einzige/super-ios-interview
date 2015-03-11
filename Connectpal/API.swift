@@ -9,14 +9,16 @@ public class API {
         self.request = APIRequest(token: token)
     }
     
-    public func signIn(email: String, password: String) -> APIResponse {
-        let response = post("/sessions", params: ["email": email, "password": password])
-        let token = response.getToken()
-        
-        // Authorize app once token is received
-        if token != nil { authorize(token) }
-        
-        return response
+    public func signIn(email: String, password: String, callback: ((APIResponse) -> ())?) {
+        {
+            return self.post("/sessions", params: ["email": email, "password": password])
+        } ~> { (response: APIResponse) in
+            let token = response.getToken()
+            
+            // Authorize app once token is received
+            if token != nil { self.authorize(token) }
+            if callback != nil { callback!(response) }
+        }
     }
     
     public func resetSession() {

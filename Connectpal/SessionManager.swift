@@ -1,9 +1,19 @@
 import Foundation
 
 public class SessionManager {
-    public func signIn(email: String, password: String) -> Bool {
-        api.signIn(email, password: password)
-        return isSignedIn()
+    public func signIn(email: String, password: String,
+        onSuccess: (() -> ())?,
+        onFail: (() -> ())?)
+    {
+        api.signIn(email, password: password) { (response: APIResponse) in
+            println(response.getData())
+            println(response.getToken())
+            if self.isSignedIn() {
+                onSuccess?()
+            } else {
+                onFail?()
+            }
+        }
     }
     
     public func isSignedIn() -> Bool {

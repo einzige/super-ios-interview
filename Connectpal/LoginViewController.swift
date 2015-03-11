@@ -9,18 +9,39 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var logInButton: UIButton!
     
     @IBAction func login() {
-        let signedIn = sessionManager.signIn(emailField.text, password: passwordField.text)
+        blockUIWithPendingLogIn()
         
-        if signedIn {
-            performSegueWithIdentifier("login_success", sender: self)
-        } else {
-            
-        }
+        sessionManager.signIn(emailField.text, password: passwordField.text,
+            onSuccess: onLoginSuccess,
+            onFail: onLoginFailed)
+    }
+    
+    private func onLoginSuccess() {
+        restoreUIAfterLogIn()
+        performSegueWithIdentifier("login_success", sender: self)
+    }
+    
+    private func onLoginFailed() {
+        restoreUIAfterLogIn()
+    }
+    
+    private func blockUIWithPendingLogIn() {
+        emailField.enabled = false
+        passwordField.enabled = false
+        logInButton.enabled = false
+        logInButton.titleLabel!.text = "Please wait..."
+    }
+    
+    private func restoreUIAfterLogIn() {
+        emailField.enabled = true
+        passwordField.enabled = true
+        logInButton.enabled = true
+        logInButton.titleLabel!.text = "Log In"
     }
     
     override func viewDidLoad() {
