@@ -77,33 +77,6 @@
             </objects>
             <point key="canvasLocation" x="1125" y="81"/>
         </scene>
-        <!--Feed View Controller-->
-        <scene sceneID="U3K-Ra-OEe">
-            <objects>
-                <tableViewController title="Feed View Controller" id="hSS-vf-zEA" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qee-Zc-d35">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZG3-JU-r9Y">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZG3-JU-r9Y" id="l6g-zD-RZR">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hSS-vf-zEA" id="T1v-ic-tv0"/>
-                            <outlet property="delegate" destination="hSS-vf-zEA" id="j5E-AV-E9K"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Feed View Controller" id="zzJ-bV-gbq"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ac5-Wh-dc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2743.5" y="81"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ydK-xO-x4G">
             <objects>
@@ -113,12 +86,55 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hSS-vf-zEA" kind="relationship" relationship="rootViewController" id="PQg-Lg-mvu"/>
+                        <segue destination="fJl-I7-32m" kind="relationship" relationship="rootViewController" id="nx3-Ir-DyO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zf-V0-IOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1908" y="81"/>
+        </scene>
+        <!--My Feed-->
+        <scene sceneID="gql-sx-Xfl">
+            <objects>
+                <collectionViewController id="fJl-I7-32m" customClass="FeedViewController" customModule="Connectpal" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AdG-q3-jfr">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KTk-OA-6O8">
+                            <size key="itemSize" width="148" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="eYy-1x-5na">
+                            <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="post-cell" id="uA1-Bz-OuU">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="148" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="0.080225848229999994" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fJl-I7-32m" id="p8i-W3-7Vi"/>
+                            <outlet property="delegate" destination="fJl-I7-32m" id="lpI-SK-iy3"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="My Feed" id="6eu-Y5-jId"/>
+                    <connections>
+                        <outlet property="loader" destination="eYy-1x-5na" id="rCZ-zM-lKi"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahk-9Z-12o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="81"/>
         </scene>
     </scenes>
     <resources>
