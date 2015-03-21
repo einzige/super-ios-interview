@@ -22,6 +22,10 @@ public class SessionManager {
         }
     }
     
+    public func registrationToken() -> String? {
+        return userData["registration_token"] as? String
+    }
+    
     public func isSignedIn() -> Bool {
         return api.isAuthorized()
     }
