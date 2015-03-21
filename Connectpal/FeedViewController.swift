@@ -22,9 +22,11 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("post-cell", forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("post-cell", forIndexPath: indexPath) as PostCell
+        
         cell.backgroundColor = UIColor.whiteColor()
-        // Configure the cell
+        cell.postTitle!.text = "Fuck this shit"
+        
         return cell
     }
 }

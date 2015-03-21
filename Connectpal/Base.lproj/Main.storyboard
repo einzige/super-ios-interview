@@ -250,6 +250,14 @@
                                         <include reference="ULQ-VX-kDs"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="commentButton" destination="kNP-Cx-gMO" id="oPf-P2-oNB"/>
+                                    <outlet property="likeButton" destination="9e7-uh-tKv" id="YP1-W4-rKv"/>
+                                    <outlet property="postImage" destination="kD5-9h-EpN" id="SRU-AX-8Qh"/>
+                                    <outlet property="postMessage" destination="Xq4-6b-oh4" id="Y9T-ZH-osF"/>
+                                    <outlet property="postTime" destination="mfC-Fy-et9" id="uTr-tW-733"/>
+                                    <outlet property="postTitle" destination="N75-Bu-cvr" id="maz-cp-lcK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fcc-iJ-fxM">
