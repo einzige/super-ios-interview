@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bmq-K5-0fK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--LoginViewController-->
@@ -107,6 +106,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AdG-q3-jfr">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="scrollIndicatorInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KTk-OA-6O8">
                             <size key="itemSize" width="374" height="135"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -127,7 +127,7 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-9h-EpN">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="8" y="8" width="50" height="50"/>
                                             </variation>
                                         </imageView>
@@ -136,7 +136,7 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="66" y="8" width="300" height="18"/>
                                             </variation>
                                         </label>
@@ -145,7 +145,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="66" y="23" width="62" height="21"/>
                                             </variation>
                                         </label>
@@ -154,7 +154,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="widthClass=compact" fixedFrame="YES">
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <rect key="frame" x="8" y="64" width="358" height="20"/>
                                             </variation>
@@ -165,7 +165,7 @@
                                             <state key="normal" title="12 Comments">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="8" y="97" width="90" height="30"/>
                                             </variation>
                                         </button>
@@ -175,7 +175,7 @@
                                             <state key="normal" title="125 Likes">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="300" y="97" width="66" height="30"/>
                                             </variation>
                                         </button>
@@ -183,14 +183,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="9us-l6-c7o"/>
-                                    <constraint firstItem="Xq4-6b-oh4" firstAttribute="leading" secondItem="kD5-9h-EpN" secondAttribute="leading" id="H02-kG-Aim"/>
-                                    <constraint firstItem="kD5-9h-EpN" firstAttribute="top" secondItem="N75-Bu-cvr" secondAttribute="top" id="Oss-Nf-Sdo"/>
-                                    <constraint firstItem="kNP-Cx-gMO" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="Q3e-8o-9lW"/>
-                                    <constraint firstItem="Xq4-6b-oh4" firstAttribute="leading" secondItem="kNP-Cx-gMO" secondAttribute="leading" id="VeA-eo-iPc"/>
-                                    <constraint firstItem="N75-Bu-cvr" firstAttribute="leading" secondItem="mfC-Fy-et9" secondAttribute="leading" id="jG3-r4-djR"/>
-                                </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="kD5-9h-EpN"/>
@@ -199,14 +191,6 @@
                                         <exclude reference="Xq4-6b-oh4"/>
                                         <exclude reference="kNP-Cx-gMO"/>
                                         <exclude reference="9e7-uh-tKv"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="Oss-Nf-Sdo"/>
-                                        <exclude reference="H02-kG-Aim"/>
-                                        <exclude reference="VeA-eo-iPc"/>
-                                        <exclude reference="jG3-r4-djR"/>
-                                        <exclude reference="Q3e-8o-9lW"/>
-                                        <exclude reference="9us-l6-c7o"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -217,14 +201,6 @@
                                         <include reference="Xq4-6b-oh4"/>
                                         <include reference="kNP-Cx-gMO"/>
                                         <include reference="9e7-uh-tKv"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="Oss-Nf-Sdo"/>
-                                        <include reference="H02-kG-Aim"/>
-                                        <include reference="VeA-eo-iPc"/>
-                                        <include reference="jG3-r4-djR"/>
-                                        <include reference="Q3e-8o-9lW"/>
-                                        <include reference="9us-l6-c7o"/>
                                     </mask>
                                 </variation>
                             </collectionViewCell>
