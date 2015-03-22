@@ -14,7 +14,7 @@ public class APIRequest {
         return getJSON(buildURL(path))
     }
     
-    public func post(path: String, params: [String: AnyObject]) -> APIResponse {
+    public func post(path: String, params: [String: AnyObject]? = nil) -> APIResponse {
         return postJSON(buildURL(path), data: params)
     }
     
@@ -26,9 +26,12 @@ public class APIRequest {
         return sendRequest(buildHTTPRequest(url))
     }
     
-    private func postJSON(url: String, data: AnyObject) -> APIResponse {
+    private func postJSON(url: String, data: AnyObject? = nil) -> APIResponse {
         let request = buildHTTPRequest(url, type: "POST")
-        request.HTTPBody = toJSON(data).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        if data != nil {
+            request.HTTPBody = toJSON(data!).dataUsingEncoding(NSUTF8StringEncoding)
+        }
     
         return sendRequest(request)
     }
@@ -40,7 +43,7 @@ public class APIRequest {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if token != nil {
-            request.setValue("Token token=\"\(token)\"", forHTTPHeaderField: "HTTP_AUTHORIZATION")
+            request.setValue("Token token=\(token!)", forHTTPHeaderField: "Authorization")
         }
         
         request.HTTPMethod = type

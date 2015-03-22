@@ -1,14 +1,15 @@
 import UIKit
 
 class FeedViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    var posts: [AnyObject] = [AnyObject]()
+    
     override func viewDidAppear(animated: Bool) {
-        
+        { return api.feed() } ~> postsLoaded
     }
     
-    func postsLoaded() {
+    func postsLoaded(response: APIResponse) {
         
     }
     
@@ -18,14 +19,14 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return posts.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("post-cell", forIndexPath: indexPath) as PostCell
         
-        cell.backgroundColor = UIColor.whiteColor()
-        cell.postTitle!.text = "Fuck this shit"
+        let post: [String: AnyObject] = posts[indexPath.row] as [String: AnyObject]
+        cell.postTitle?.text = post["title"] as? String
         
         return cell
     }

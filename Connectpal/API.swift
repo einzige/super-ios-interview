@@ -21,6 +21,10 @@ public class API {
         }
     }
     
+    public func feed() -> APIResponse {
+        return self.get("/posts/feed")
+    }
+    
     public func resetSession() {
         self.token = nil
     }
@@ -29,11 +33,11 @@ public class API {
         return token != nil
     }
     
-    private func get(path: String, params: [String: String]) -> APIResponse {
+    private func get(path: String, params: [String: String]? = nil) -> APIResponse {
         return request.get(path, params: params)
     }
     
-    private func post(path: String, params: [String: String]) -> APIResponse {
+    private func post(path: String, params: [String: String]? = nil) -> APIResponse {
         return request.post(path, params: params)
     }
     
