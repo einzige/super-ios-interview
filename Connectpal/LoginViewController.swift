@@ -44,6 +44,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        return identifier != "login_success"
+    }
+    
     private func onLoginSuccess() {
         restoreUIAfterLogIn()
         performSegueWithIdentifier("login_success", sender: self)

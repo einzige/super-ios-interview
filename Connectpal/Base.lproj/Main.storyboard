@@ -44,7 +44,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="login" destination="Bmq-K5-0fK" eventType="touchUpInside" id="KNw-5B-7Jl"/>
-                                    <segue destination="slM-a1-3Mk" kind="showDetail" identifier="login_success" id="JZQ-2l-hNQ"/>
+                                    <segue destination="slM-a1-3Mk" kind="custom" identifier="login_success" id="qxg-1L-5zK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-kC-NsJ">
