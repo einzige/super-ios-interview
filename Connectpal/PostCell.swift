@@ -24,4 +24,9 @@ class PostCell: UICollectionViewCell {
         //layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 5).CGPath
         //layer.shouldRasterize = true
     }
+    
+    override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes! {
+        let toReturn = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
+        return toReturn
+    }
 }

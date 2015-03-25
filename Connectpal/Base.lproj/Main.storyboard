@@ -120,7 +120,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="post-cell" id="uA1-Bz-OuU" customClass="PostCell" customModule="Connectpal" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="299" placeholderIntrinsicHeight="135" reuseIdentifier="post-cell" id="uA1-Bz-OuU" customClass="PostCell" customModule="Connectpal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -147,7 +147,8 @@
                                                     <exclude reference="tTK-Lu-u0v"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="9" y="9" width="40" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="dHe-iv-3rg"/>
                                                     <include reference="tTK-Lu-u0v"/>
@@ -160,7 +161,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="67" y="8" width="123" height="18"/>
+                                                <rect key="frame" x="67" y="8" width="232" height="18"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Fy-et9">
@@ -169,17 +170,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="66" y="25" width="88" height="21"/>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post text goes here" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-6b-oh4">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                <rect key="frame" x="8" y="69" width="134" height="20"/>
+                                                <rect key="frame" x="66" y="25" width="233" height="21"/>
                                             </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNP-Cx-gMO" customClass="StyledButton" customModule="Connectpal" customModuleProvider="target">
@@ -188,7 +179,7 @@
                                             <state key="normal" title="12 Comments">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                                 <rect key="frame" x="8" y="100" width="92" height="27"/>
                                             </variation>
                                         </button>
@@ -199,39 +190,60 @@
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                            <variation key="widthClass=compact" misplaced="YES">
                                                 <rect key="frame" x="226" y="100" width="65" height="27"/>
                                             </variation>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post text goes here" lineBreakMode="wordWrap" numberOfLines="45" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-6b-oh4">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <rect key="frame" x="8" y="57" width="283" height="22"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="DR3-nz-jq9"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="top" secondItem="kD5-9h-EpN" secondAttribute="bottom" constant="10" id="RWw-Ue-p9z"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="leading" secondItem="uA1-Bz-OuU" secondAttribute="leadingMargin" id="ULQ-VX-kDs"/>
                                     <constraint firstItem="kD5-9h-EpN" firstAttribute="leading" secondItem="uA1-Bz-OuU" secondAttribute="leadingMargin" constant="8" id="Y0E-Cp-h28">
                                         <variation key="widthClass=compact" constant="1"/>
                                     </constraint>
+                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="bsd-zM-n4x"/>
                                     <constraint firstItem="kD5-9h-EpN" firstAttribute="top" secondItem="uA1-Bz-OuU" secondAttribute="topMargin" constant="8" id="fFJ-P9-CZg">
                                         <variation key="widthClass=compact" constant="1"/>
                                     </constraint>
+                                    <constraint firstItem="kNP-Cx-gMO" firstAttribute="top" secondItem="Xq4-6b-oh4" secondAttribute="bottom" constant="11" id="l6B-We-3r8"/>
                                 </constraints>
                                 <size key="customSize" width="299" height="135"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="estimatedItemSize">
+                                        <size key="value" width="150" height="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="kD5-9h-EpN"/>
                                         <exclude reference="N75-Bu-cvr"/>
                                         <exclude reference="mfC-Fy-et9"/>
-                                        <exclude reference="Xq4-6b-oh4"/>
                                         <exclude reference="kNP-Cx-gMO"/>
                                         <exclude reference="9e7-uh-tKv"/>
+                                        <exclude reference="Xq4-6b-oh4"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Y0E-Cp-h28"/>
                                         <exclude reference="fFJ-P9-CZg"/>
                                         <exclude reference="RWw-Ue-p9z"/>
                                         <exclude reference="ULQ-VX-kDs"/>
+                                        <exclude reference="l6B-We-3r8"/>
+                                        <exclude reference="DR3-nz-jq9"/>
+                                        <exclude reference="bsd-zM-n4x"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -239,15 +251,18 @@
                                         <include reference="kD5-9h-EpN"/>
                                         <include reference="N75-Bu-cvr"/>
                                         <include reference="mfC-Fy-et9"/>
-                                        <include reference="Xq4-6b-oh4"/>
                                         <include reference="kNP-Cx-gMO"/>
                                         <include reference="9e7-uh-tKv"/>
+                                        <include reference="Xq4-6b-oh4"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Y0E-Cp-h28"/>
                                         <include reference="fFJ-P9-CZg"/>
                                         <include reference="RWw-Ue-p9z"/>
                                         <include reference="ULQ-VX-kDs"/>
+                                        <include reference="l6B-We-3r8"/>
+                                        <include reference="DR3-nz-jq9"/>
+                                        <include reference="bsd-zM-n4x"/>
                                     </mask>
                                 </variation>
                                 <connections>

@@ -67,6 +67,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             })
         }
         
+        cell.sizeToFit()
+        
         return cell
     }
     
