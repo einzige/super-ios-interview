@@ -116,7 +116,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="299" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rss_button-50x50" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-9h-EpN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="rss_button-50x50" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-9h-EpN">
                                             <rect key="frame" x="9" y="9" width="40" height="40"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.border">
@@ -170,6 +170,7 @@
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="kNP-Cx-gMO" secondAttribute="bottom" id="bcB-ie-w5K"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="phh-DN-pof"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="height" secondItem="kNP-Cx-gMO" secondAttribute="height" id="r6Z-9g-2Is"/>
+                                    <constraint firstItem="Xq4-6b-oh4" firstAttribute="top" secondItem="kD5-9h-EpN" secondAttribute="bottom" constant="8" id="t9j-YL-m0m"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="leading" secondItem="uA1-Bz-OuU" secondAttribute="leadingMargin" id="tel-rf-BZL"/>
                                     <constraint firstItem="kNP-Cx-gMO" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="ud8-Qh-ISE"/>
                                 </constraints>
