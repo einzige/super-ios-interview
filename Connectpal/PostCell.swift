@@ -25,8 +25,9 @@ class PostCell: UICollectionViewCell {
         //layer.shouldRasterize = true
     }
     
-    override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes! {
-        let toReturn = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
-        return toReturn
+    override func sizeThatFits(size: CGSize) -> CGSize {
+        return postMessage.bounds.size
     }
+    
+    
 }
