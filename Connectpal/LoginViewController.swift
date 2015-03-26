@@ -20,8 +20,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailField.canBecomeFirstResponder()
         passwordField.canBecomeFirstResponder()
         api.resetSession()
-        emailField.text = "szinin@gmail.com"
-        passwordField.text = "gfhjkmqe"
+        emailField.text = "will@connectpal.com"
+        passwordField.text = "password"
         super.viewDidLoad()
     }
     
