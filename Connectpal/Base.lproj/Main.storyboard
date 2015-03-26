@@ -109,7 +109,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="post-cell" id="uA1-Bz-OuU" customClass="PostCell" customModule="Connectpal" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" placeholderIntrinsicWidth="299" placeholderIntrinsicHeight="135" reuseIdentifier="post-cell" id="uA1-Bz-OuU" customClass="PostCell" customModule="Connectpal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -181,7 +181,6 @@
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="leading" secondItem="uA1-Bz-OuU" secondAttribute="leadingMargin" id="tel-rf-BZL"/>
                                     <constraint firstItem="kNP-Cx-gMO" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="ud8-Qh-ISE"/>
                                 </constraints>
-                                <size key="customSize" width="299" height="135"/>
                                 <connections>
                                     <outlet property="commentButton" destination="kNP-Cx-gMO" id="oPf-P2-oNB"/>
                                     <outlet property="likeButton" destination="9e7-uh-tKv" id="YP1-W4-rKv"/>
