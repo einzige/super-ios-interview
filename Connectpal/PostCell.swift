@@ -17,6 +17,7 @@ class PostCell: UICollectionViewCell {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.cornerRadius = 3
+        
         layer.masksToBounds = false
         layer.shadowOpacity = 0.1
         layer.shadowRadius = 2.0
@@ -28,6 +29,4 @@ class PostCell: UICollectionViewCell {
     override func sizeThatFits(size: CGSize) -> CGSize {
         return postMessage.bounds.size
     }
-    
-    
 }

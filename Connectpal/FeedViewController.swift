@@ -13,6 +13,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     func postsLoaded(response: APIResponse) {
         self.posts = response.getData()["posts"] as [AnyObject]
         self.collectionView?.reloadData()
+        loader.hidden = true
     }
     
     // UICOllectionViewDelegateFlowLayout
@@ -84,12 +85,14 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        let maxSize = CGSizeMake(260, 3999)
+        let maxSize = CGSizeMake(280, 3999)
         let size = label.sizeThatFits(maxSize)
         
-        //collectionView.cellForItemAtIndexPath(indexPath)
+        let result = CGSizeMake(299, size.height + 120)
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as? PostCell
 
-        return CGSizeMake(size.width, size.height + 120)
+        return result
     }
     
     private func setImageAt(indexPath: NSIndexPath, image: UIImage) {
