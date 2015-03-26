@@ -22,6 +22,9 @@
 		0D8B95FA1AAF4F5C0043A433 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B95F91AAF4F5C0043A433 /* API.swift */; };
 		0D8B95FC1AB00BFE0043A433 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B95FB1AB00BFE0043A433 /* SessionManager.swift */; };
 		0D8B95FE1AB05C660043A433 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B95FD1AB05C660043A433 /* Helpers.swift */; };
+		0D8F2BA71AC434FD0046D865 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BA61AC434FD0046D865 /* Post.swift */; };
+		0D8F2BA91AC4357B0046D865 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BA81AC4357B0046D865 /* BaseModel.swift */; };
+		0D8F2BAB1AC43B700046D865 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BAA1AC43B700046D865 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		0D8B95F91AAF4F5C0043A433 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0D8B95FB1AB00BFE0043A433 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		0D8B95FD1AB05C660043A433 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		0D8F2BA61AC434FD0046D865 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0D8F2BA81AC4357B0046D865 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		0D8F2BAA1AC43B700046D865 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 		0D51FB181AA99DAC007D5D3A /* Connectpal */ = {
 			isa = PBXGroup;
 			children = (
+				0D8F2BA51AC434F10046D865 /* Models */,
 				0D1D12BB1ABDCE50005DCD5C /* UI */,
 				0D1D12BA1ABDCA86005DCD5C /* Managers */,
 				0D1D12B91ABDCA62005DCD5C /* Api */,
@@ -169,6 +176,16 @@
 				0D51FB331AA99DAD007D5D3A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D8F2BA51AC434F10046D865 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D8F2BA61AC434FD0046D865 /* Post.swift */,
+				0D8F2BA81AC4357B0046D865 /* BaseModel.swift */,
+				0D8F2BAA1AC43B700046D865 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +291,10 @@
 				0D8B95EF1AAEE7F50043A433 /* LoginViewController.swift in Sources */,
 				0D1D12B81ABD321E005DCD5C /* FeedViewController.swift in Sources */,
 				0D8B95FA1AAF4F5C0043A433 /* API.swift in Sources */,
+				0D8F2BA91AC4357B0046D865 /* BaseModel.swift in Sources */,
+				0D8F2BA71AC434FD0046D865 /* Post.swift in Sources */,
 				0D1D12BF1ABDE24A005DCD5C /* StyledButton.swift in Sources */,
+				0D8F2BAB1AC43B700046D865 /* User.swift in Sources */,
 				0D8B95F41AAF115B0043A433 /* APIRequest.swift in Sources */,
 				0D8B95FE1AB05C660043A433 /* Helpers.swift in Sources */,
 				0D51FB1F1AA99DAC007D5D3A /* Connectpal.xcdatamodeld in Sources */,

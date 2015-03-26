@@ -7,4 +7,10 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak var postTime: UILabel!
     @IBOutlet weak var commentButton: StyledButton!
     @IBOutlet weak var likeButton: StyledButton!
+    
+    func pullFields(post: Post) {
+        postTitle.text = post.title
+        postMessage.text = post.message
+        postTime.text = post.createdAt
+    }
 }

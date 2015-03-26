@@ -31,11 +31,9 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("post-cell", forIndexPath: indexPath) as PostCell
-        let post: [String: AnyObject] = posts[indexPath.row] as [String: AnyObject]
+        let post = Post(data: posts[indexPath.row] as [String: AnyObject])
         
-        cell.postTitle?.text = post["title"] as? String
-        cell.postMessage?.text = post["message"] as? String
-        cell.postTime?.text = post["created_at"] as? String
+        cell.pullFields(post)
         
         let authorData = post["user"] as [String: AnyObject]
         let authorID = authorData["id"] as Int
