@@ -127,14 +127,14 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post title goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N75-Bu-cvr">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" text="Post title goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="223" translatesAutoresizingMaskIntoConstraints="NO" id="N75-Bu-cvr">
                                             <rect key="frame" x="67" y="8" width="224" height="18"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Fy-et9">
-                                            <rect key="frame" x="66" y="25" width="233" height="21"/>
+                                            <rect key="frame" x="66" y="25" width="225" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Post text goes here asfkadfkajsfklsajdfsadlkflkajsdfkljasdklfjasdkljfsdf  asdfasdfasdfa sa fasdfa sdfdsa fasdfdsafasdf" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-6b-oh4">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Post text goes here asfkadfkajsfklsajdfsadlkflkajsdfkljasdklfjasdkljfsdf  asdfasdfasdfa sa fasdfa sdfdsa fasdfdsafasdf" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-6b-oh4">
                                             <rect key="frame" x="8" y="57" width="283" height="22"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -166,10 +166,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="kNP-Cx-gMO" secondAttribute="bottom" id="1Fj-BC-pWv"/>
+                                    <constraint firstItem="N75-Bu-cvr" firstAttribute="top" secondItem="uA1-Bz-OuU" secondAttribute="topMargin" id="APL-Zh-5Zd"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="Bc8-QM-Foe"/>
+                                    <constraint firstItem="N75-Bu-cvr" firstAttribute="top" secondItem="kD5-9h-EpN" secondAttribute="top" id="UlV-cT-jIa"/>
+                                    <constraint firstItem="N75-Bu-cvr" firstAttribute="leading" secondItem="kD5-9h-EpN" secondAttribute="trailing" constant="10" id="axh-Ej-yi6"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="kNP-Cx-gMO" secondAttribute="bottom" id="bcB-ie-w5K"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="phh-DN-pof"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="height" secondItem="kNP-Cx-gMO" secondAttribute="height" id="r6Z-9g-2Is"/>
+                                    <constraint firstItem="N75-Bu-cvr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" priority="100" id="ref-CR-ICV"/>
+                                    <constraint firstItem="kD5-9h-EpN" firstAttribute="top" secondItem="uA1-Bz-OuU" secondAttribute="topMargin" id="sVg-kW-hhD"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="top" secondItem="kD5-9h-EpN" secondAttribute="bottom" constant="8" id="t9j-YL-m0m"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="leading" secondItem="uA1-Bz-OuU" secondAttribute="leadingMargin" id="tel-rf-BZL"/>
                                     <constraint firstItem="kNP-Cx-gMO" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="ud8-Qh-ISE"/>
