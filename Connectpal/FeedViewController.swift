@@ -24,6 +24,10 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        collectionViewLayout.invalidateLayout()
+    }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("post-cell", forIndexPath: indexPath) as PostCell
@@ -32,7 +36,6 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         cell.postTitle?.text = post["title"] as? String
         cell.postMessage?.text = post["message"] as? String
         cell.postTime?.text = post["created_at"] as? String
-        cell.postMessage?.sizeToFit()
         
         let authorData = post["user"] as [String: AnyObject]
         let authorID = authorData["id"] as Int
@@ -69,30 +72,30 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             })
         }
         
-        //cell.sizeToFit()
-        cell.layoutIfNeeded()
-        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let post: [String: AnyObject] = posts[indexPath.row] as [String: AnyObject]
         
+        // Virtual label to estimate cell's height
         let label = UILabel()
-        label.preferredMaxLayoutWidth = 260
         label.font = UIFont(name: "Helvetica Neue", size: 14.0)
         label.text = post["message"] as? String
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        let maxSize = CGSizeMake(280, 3999)
-        let size = label.sizeThatFits(maxSize)
+        let screenSize = UIScreen.mainScreen().bounds
+        let padding = 5 + 5 as CGFloat
+        let margin = 5 + 5 as CGFloat
         
-        let result = CGSizeMake(299, size.height + 120)
+        let labelWidth = screenSize.width - padding - margin
+        let maxHeight = 3999 as CGFloat
         
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as? PostCell
-
-        return result
+        let maxLabelSize = CGSizeMake(labelWidth, maxHeight)
+        let size = label.sizeThatFits(maxLabelSize)
+    
+        return CGSizeMake(screenSize.width - margin, size.height + 120)
     }
     
     private func setImageAt(indexPath: NSIndexPath, image: UIImage) {
