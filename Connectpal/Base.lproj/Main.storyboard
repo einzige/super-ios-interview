@@ -133,8 +133,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Fy-et9">
-                                            <rect key="frame" x="66" y="25" width="225" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="19 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Fy-et9">
+                                            <rect key="frame" x="66" y="28" width="225" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -171,6 +171,8 @@
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="top" secondItem="kD5-9h-EpN" secondAttribute="top" id="UlV-cT-jIa"/>
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="leading" secondItem="kD5-9h-EpN" secondAttribute="trailing" constant="10" id="axh-Ej-yi6"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="kNP-Cx-gMO" secondAttribute="bottom" id="bcB-ie-w5K"/>
+                                    <constraint firstItem="N75-Bu-cvr" firstAttribute="leading" secondItem="mfC-Fy-et9" secondAttribute="leading" id="nQ0-qL-JkY"/>
+                                    <constraint firstItem="mfC-Fy-et9" firstAttribute="top" secondItem="N75-Bu-cvr" secondAttribute="bottom" constant="2" id="nWd-GJ-iHe"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="phh-DN-pof"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="height" secondItem="kNP-Cx-gMO" secondAttribute="height" id="r6Z-9g-2Is"/>
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" priority="100" id="ref-CR-ICV"/>
