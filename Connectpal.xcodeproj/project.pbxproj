@@ -25,6 +25,7 @@
 		0D8F2BA71AC434FD0046D865 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BA61AC434FD0046D865 /* Post.swift */; };
 		0D8F2BA91AC4357B0046D865 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BA81AC4357B0046D865 /* BaseModel.swift */; };
 		0D8F2BAB1AC43B700046D865 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BAA1AC43B700046D865 /* User.swift */; };
+		0D8F2BAD1AC4462F0046D865 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F2BAC1AC4462F0046D865 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		0D8F2BA61AC434FD0046D865 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0D8F2BA81AC4357B0046D865 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		0D8F2BAA1AC43B700046D865 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0D8F2BAC1AC4462F0046D865 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				0D51FB1A1AA99DAC007D5D3A /* Info.plist */,
+				0D8F2BAC1AC4462F0046D865 /* Extensions.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				0D8B95F41AAF115B0043A433 /* APIRequest.swift in Sources */,
 				0D8B95FE1AB05C660043A433 /* Helpers.swift in Sources */,
 				0D51FB1F1AA99DAC007D5D3A /* Connectpal.xcdatamodeld in Sources */,
+				0D8F2BAD1AC4462F0046D865 /* Extensions.swift in Sources */,
 				0D8B95F81AAF45D30043A433 /* APIResponse.swift in Sources */,
 				0D51FB1C1AA99DAC007D5D3A /* AppDelegate.swift in Sources */,
 				0D8B95FC1AB00BFE0043A433 /* SessionManager.swift in Sources */,

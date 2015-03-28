@@ -16,7 +16,6 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         loader.hidden = true
     }
     
-    // UICOllectionViewDelegateFlowLayout
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -32,54 +31,55 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("post-cell", forIndexPath: indexPath) as PostCell
         let post = Post(data: posts[indexPath.row] as [String: AnyObject])
+        let author = post.user!
         
         cell.pullFields(post)
         
-        let authorData = post["user"] as [String: AnyObject]
-        let authorID = authorData["id"] as Int
-        var image = profileImageCache[authorID]
-        
-        if image == nil {
-            // If the image does not exist, we need to download it
-            var imgURL: NSURL = NSURL(string: authorData["small_profile_picture_url"] as String)!
+        if author.smallProfilePictureUrl != nil {
+            var image = profileImageCache[author.ID]
             
-            // Download an NSData representation of the image at the URL
-            let request: NSURLRequest = NSURLRequest(URL: imgURL)
-            
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-                if error == nil {
-                    image = UIImage(data: data)
-                    
-                    // Store the image into the cache
-                    self.profileImageCache[authorID] = image! as UIImage
-                    dispatch_async(dispatch_get_main_queue(), {
-                        if let cellToUpdate = collectionView.cellForItemAtIndexPath(indexPath) as? PostCell {
-                            cellToUpdate.postImage?.image = image
-                        }
-                    })
-                }
-                else {
-                    println("Error: \(error.localizedDescription)")
-                }
-            })
-        } else {
-            dispatch_async(dispatch_get_main_queue(), {
-                if let cellToUpdate = collectionView.cellForItemAtIndexPath(indexPath) as? PostCell {
-                    cellToUpdate.postImage?.image = image
-                }
-            })
+            if image == nil {
+                // If the image does not exist, we need to download it
+                var imgURL: NSURL = NSURL(string: author.smallProfilePictureUrl!)!
+                
+                // Download an NSData representation of the image at the URL
+                let request: NSURLRequest = NSURLRequest(URL: imgURL)
+                
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                    if error == nil {
+                        image = UIImage(data: data)
+                        
+                        // Store the image into the cache
+                        self.profileImageCache[author.ID] = image! as UIImage
+                        dispatch_async(dispatch_get_main_queue(), {
+                            if let cellToUpdate = collectionView.cellForItemAtIndexPath(indexPath) as? PostCell {
+                                cellToUpdate.postImage?.image = image
+                            }
+                        })
+                    }
+                    else {
+                        println("Error: \(error.localizedDescription)")
+                    }
+                })
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let cellToUpdate = collectionView.cellForItemAtIndexPath(indexPath) as? PostCell {
+                        cellToUpdate.postImage?.image = image
+                    }
+                })
+            }
         }
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let post: [String: AnyObject] = posts[indexPath.row] as [String: AnyObject]
+        let post = Post(data: posts[indexPath.row] as [String: AnyObject])
         
         // Virtual label to estimate cell's height
         let label = UILabel()
         label.font = UIFont(name: "Helvetica Neue", size: 14.0)
-        label.text = post["message"] as? String
+        label.text = post.message?.htmlSafe
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
@@ -94,13 +94,5 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         let size = label.sizeThatFits(maxLabelSize)
     
         return CGSizeMake(screenSize.width - margin, size.height + 120)
-    }
-    
-    private func setImageAt(indexPath: NSIndexPath, image: UIImage) {
-        dispatch_async(dispatch_get_main_queue(), {
-            if let cellToUpdate = (self.view as UICollectionView).cellForItemAtIndexPath(indexPath) as? PostCell {
-                cellToUpdate.postImage?.image = image
-            }
-        })
     }
 }

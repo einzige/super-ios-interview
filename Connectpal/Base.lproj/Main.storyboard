@@ -152,8 +152,11 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e7-uh-tKv" customClass="StyledButton" customModule="Connectpal" customModuleProvider="target">
-                                            <rect key="frame" x="216" y="100" width="76" height="27"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e7-uh-tKv" customClass="StyledButton" customModule="Connectpal" customModuleProvider="target">
+                                            <rect key="frame" x="208" y="100" width="83" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="83" id="WaH-Lx-aqf"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="125 Likes">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,13 +168,11 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="kNP-Cx-gMO" secondAttribute="bottom" id="1Fj-BC-pWv"/>
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="top" secondItem="uA1-Bz-OuU" secondAttribute="topMargin" id="APL-Zh-5Zd"/>
                                     <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="uA1-Bz-OuU" secondAttribute="bottomMargin" id="Bc8-QM-Foe"/>
-                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="HQv-gh-EeH"/>
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="top" secondItem="kD5-9h-EpN" secondAttribute="top" id="UlV-cT-jIa"/>
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="leading" secondItem="kD5-9h-EpN" secondAttribute="trailing" constant="10" id="axh-Ej-yi6"/>
-                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="bottom" secondItem="kNP-Cx-gMO" secondAttribute="bottom" id="bcB-ie-w5K"/>
+                                    <constraint firstItem="9e7-uh-tKv" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="lQv-gb-8YX"/>
                                     <constraint firstItem="N75-Bu-cvr" firstAttribute="leading" secondItem="mfC-Fy-et9" secondAttribute="leading" id="nQ0-qL-JkY"/>
                                     <constraint firstItem="mfC-Fy-et9" firstAttribute="top" secondItem="N75-Bu-cvr" secondAttribute="bottom" constant="2" id="nWd-GJ-iHe"/>
                                     <constraint firstItem="Xq4-6b-oh4" firstAttribute="trailing" secondItem="uA1-Bz-OuU" secondAttribute="trailingMargin" id="phh-DN-pof"/>

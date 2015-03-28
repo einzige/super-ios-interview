@@ -5,6 +5,7 @@ class BaseModel {
     
     init(data: [String: AnyObject]) {
         self.data = data
+        afterInit()
     }
     
     subscript(key: String) -> AnyObject? {
@@ -14,5 +15,13 @@ class BaseModel {
         set(newValue) {
             data[key] = newValue
         }
+    }
+    
+    var ID: Int {
+        get { return self["id"] as Int }
+    }
+    
+    func afterInit() {
+        // Override me
     }
 }

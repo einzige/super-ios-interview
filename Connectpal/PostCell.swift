@@ -9,8 +9,8 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak var likeButton: StyledButton!
     
     func pullFields(post: Post) {
-        postTitle.text = post.title
-        postMessage.text = post.message
-        postTime.text = post.createdAt
+        postTitle?.text = post.title
+        postMessage?.text = post.message?.htmlSafe
+        likeButton?.titleLabel?.text = "\(post.likesCount) Likes"
     }
 }
