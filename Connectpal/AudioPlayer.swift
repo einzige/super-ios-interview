@@ -1,9 +1,7 @@
 import UIKit
 
-@IBDesignable class AudioPlayer: UIView {
- 
-    var view: UIView!
-    var nibName = "AudioPlayer"
+@IBDesignable class AudioPlayer: DesignableView {
+    override var nibName: String? { return "AudioPlayer" }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,18 +13,10 @@ import UIKit
         xibSetup()
     }
     
-    func xibSetup() {
-        view = loadViewFromNib()
-        view.frame = bounds
+    override func setupView() {
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        addSubview(view)
-    }
-    
-    func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "AudioPlayer", bundle: bundle)
-        
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
-        return view
+        var newFrame = view.frame
+        newFrame.size = CGSizeMake(newFrame.width, 50.0);
+        view.frame = newFrame;
     }
 }
