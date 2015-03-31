@@ -19,6 +19,13 @@ import UIKit
         }
     }
     
+    @IBInspectable var backgroundLayerColor: UIColor? {
+        get { return view.backgroundColor }
+        set(value) {
+            view.backgroundColor = value
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()

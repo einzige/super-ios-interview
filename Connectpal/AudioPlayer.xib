@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Audio Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuF-EN-Bl3">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Audio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuF-EN-Bl3">
                     <rect key="frame" x="66" y="0.0" width="97" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,11 +32,12 @@
                 </button>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1gR-2g-xLR">
                     <rect key="frame" x="66" y="23" width="526" height="2"/>
+                    <color key="trackTintColor" red="0.53480937880000001" green="0.87143205079999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </progressView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27M-HY-hSJ">
                     <rect key="frame" x="23" y="13" width="43" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -45,6 +46,7 @@
                 <constraint firstItem="vuF-EN-Bl3" firstAttribute="leading" secondItem="1gR-2g-xLR" secondAttribute="leading" id="9Tq-76-OEe"/>
                 <constraint firstItem="Nnv-EL-oRi" firstAttribute="centerY" secondItem="27M-HY-hSJ" secondAttribute="centerY" id="JzK-SR-MT7"/>
                 <constraint firstAttribute="trailing" secondItem="vuF-EN-Bl3" secondAttribute="trailing" id="QGH-oy-i0d"/>
+                <constraint firstItem="vuF-EN-Bl3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="ZRU-Uo-cVR"/>
                 <constraint firstAttribute="trailing" secondItem="1gR-2g-xLR" secondAttribute="trailing" constant="8" id="l4T-Si-JRN"/>
                 <constraint firstItem="Nnv-EL-oRi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lTZ-VS-2FI"/>
                 <constraint firstItem="27M-HY-hSJ" firstAttribute="leading" secondItem="Nnv-EL-oRi" secondAttribute="trailing" id="pAe-lH-cD5"/>
