@@ -7,7 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudioPlayer" customModule="Connectpal" customModuleProvider="target">
             <connections>
                 <outlet property="playButton" destination="Nnv-EL-oRi" id="RRT-Uj-VvK"/>
-                <outlet property="progressbar" destination="zzb-Gu-sjh" id="xRw-IX-tQb"/>
+                <outlet property="progressBar" destination="1gR-2g-xLR" id="fxU-3t-oq8"/>
+                <outlet property="seekTarget" destination="kZh-aP-0z8" id="JFD-RP-rUd"/>
                 <outlet property="timing" destination="27M-HY-hSJ" id="MIu-AM-7nQ"/>
                 <outlet property="title" destination="vuF-EN-Bl3" id="rdn-DT-9q6"/>
             </connections>
@@ -17,6 +18,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZh-aP-0z8">
+                    <rect key="frame" x="66" y="9" width="526" height="30"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Audio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuF-EN-Bl3">
                     <rect key="frame" x="66" y="0.0" width="97" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -47,6 +51,8 @@
                 <constraint firstItem="Nnv-EL-oRi" firstAttribute="centerY" secondItem="27M-HY-hSJ" secondAttribute="centerY" id="JzK-SR-MT7"/>
                 <constraint firstAttribute="trailing" secondItem="vuF-EN-Bl3" secondAttribute="trailing" id="QGH-oy-i0d"/>
                 <constraint firstItem="vuF-EN-Bl3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="ZRU-Uo-cVR"/>
+                <constraint firstItem="1gR-2g-xLR" firstAttribute="width" secondItem="kZh-aP-0z8" secondAttribute="width" id="efJ-Il-WcI"/>
+                <constraint firstItem="kZh-aP-0z8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="feJ-eJ-1Oc"/>
                 <constraint firstAttribute="trailing" secondItem="1gR-2g-xLR" secondAttribute="trailing" constant="8" id="l4T-Si-JRN"/>
                 <constraint firstItem="Nnv-EL-oRi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lTZ-VS-2FI"/>
                 <constraint firstItem="27M-HY-hSJ" firstAttribute="leading" secondItem="Nnv-EL-oRi" secondAttribute="trailing" id="pAe-lH-cD5"/>
