@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D11F1D11ACAAF2E00123E6B /* AudioPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D11F1D01ACAAF2E00123E6B /* AudioPlayer.xib */; };
+		0D11F1D31ACAB9C000123E6B /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D11F1D21ACAB9C000123E6B /* AudioPlayer.swift */; };
 		0D1D12B81ABD321E005DCD5C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D12B71ABD321E005DCD5C /* FeedViewController.swift */; };
 		0D1D12BD1ABDCE96005DCD5C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D12BC1ABDCE96005DCD5C /* PostCell.swift */; };
 		0D1D12BF1ABDE24A005DCD5C /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D12BE1ABDE24A005DCD5C /* StyledButton.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D11F1D01ACAAF2E00123E6B /* AudioPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioPlayer.xib; sourceTree = "<group>"; };
+		0D11F1D21ACAB9C000123E6B /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		0D1D12B71ABD321E005DCD5C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0D1D12BC1ABDCE96005DCD5C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		0D1D12BE1ABDE24A005DCD5C /* StyledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			children = (
 				0D1D12BC1ABDCE96005DCD5C /* PostCell.swift */,
 				0D1D12BE1ABDE24A005DCD5C /* StyledButton.swift */,
+				0D11F1D01ACAAF2E00123E6B /* AudioPlayer.xib */,
+				0D11F1D21ACAB9C000123E6B /* AudioPlayer.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -146,11 +152,12 @@
 				0D1D12B61ABD31D8005DCD5C /* Controllers */,
 				0D51FB1B1AA99DAC007D5D3A /* AppDelegate.swift */,
 				0D51FB221AA99DAC007D5D3A /* Main.storyboard */,
-				0D51FB251AA99DAC007D5D3A /* Images.xcassets */,
 				0D51FB271AA99DAC007D5D3A /* LaunchScreen.xib */,
+				0D51FB251AA99DAC007D5D3A /* Images.xcassets */,
 				0D51FB1D1AA99DAC007D5D3A /* Connectpal.xcdatamodeld */,
 				0D51FB191AA99DAC007D5D3A /* Supporting Files */,
 				0D8B95FD1AB05C660043A433 /* Helpers.swift */,
+				0D8F2BAC1AC4462F0046D865 /* Extensions.swift */,
 			);
 			path = Connectpal;
 			sourceTree = "<group>";
@@ -159,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				0D51FB1A1AA99DAC007D5D3A /* Info.plist */,
-				0D8F2BAC1AC4462F0046D865 /* Extensions.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				0D51FB241AA99DAC007D5D3A /* Main.storyboard in Resources */,
 				0D51FB291AA99DAC007D5D3A /* LaunchScreen.xib in Resources */,
 				0D51FB261AA99DAC007D5D3A /* Images.xcassets in Resources */,
+				0D11F1D11ACAAF2E00123E6B /* AudioPlayer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +309,7 @@
 				0D8B95FE1AB05C660043A433 /* Helpers.swift in Sources */,
 				0D51FB1F1AA99DAC007D5D3A /* Connectpal.xcdatamodeld in Sources */,
 				0D8F2BAD1AC4462F0046D865 /* Extensions.swift in Sources */,
+				0D11F1D31ACAB9C000123E6B /* AudioPlayer.swift in Sources */,
 				0D8B95F81AAF45D30043A433 /* APIResponse.swift in Sources */,
 				0D51FB1C1AA99DAC007D5D3A /* AppDelegate.swift in Sources */,
 				0D8B95FC1AB00BFE0043A433 /* SessionManager.swift in Sources */,

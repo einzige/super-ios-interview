@@ -70,6 +70,9 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
             }
         }
         
+        //let player = AudioPlayer(frame: CGRectMake(0,200,320,200))
+        //cell.addSubview(player)
+        
         return cell
     }
     
