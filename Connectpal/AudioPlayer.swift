@@ -26,16 +26,6 @@ import UIKit
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        xibSetup()
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        xibSetup()
-    }
-    
     override func setupView() {
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         var newFrame = view.frame
