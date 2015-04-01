@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-@IBDesignable class AudioPlayer: DesignableView, AVAudioPlayerDelegate {
+@IBDesignable class AudioPlayer: DesignableView {
     override var nibName: String? { return "AudioPlayer" }
     
     @IBOutlet weak var title: UILabel!
@@ -17,31 +17,12 @@ import AVFoundation
     private var _item: AVPlayerItem?
     
     lazy var player: Player = {
-        let result = Player(playerItem: self.item)
-        result.addStatusObserver(self)
-        return result
+        return Player(playerItem: self.item)
     }()
     
-    var item: AVPlayerItem {
-        get {
-            if _item == nil {
-                _item = AVPlayerItem(URL: NSURL(string: filePath!))
-            }
-            return _item!
-        }
-        
-        set(newItem) {
-            _item = newItem
-            
-            player.pause()
-            player.cancelPendingPrerolls()
-            
-            if _item != nil {
-                player.replaceCurrentItemWithPlayerItem(_item)
-                _item!.addObserver(self, forKeyPath: "status", options: nil, context: nil)
-            }
-        }
-    }
+    lazy var item: AVPlayerItem = {
+        return AVPlayerItem(URL: NSURL(string: self.filePath!))
+    }()
     
     var position: Float {
         get { return _position }
@@ -58,7 +39,6 @@ import AVFoundation
             }
         }
     }
-
     
     @IBInspectable var textColor: UIColor {
         get { return _textColor }
@@ -93,48 +73,8 @@ import AVFoundation
     func onSeek(sender: UITapGestureRecognizer) {
         let xLocation = sender.locationInView(seekTarget).x
         position = Float(xLocation / seekTarget.bounds.width)
-        if position < 0.03 { position = 0.0 }
         
         progressBar.setProgress(position, animated: true)
-        play()
-    }
-    
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        if keyPath == "status" {
-            if player.status == AVPlayerStatus.Failed {
-                println("failed")
-            } else {
-                play()
-            }
-        }
-    }
-    
-    func play() {
-        if player.status == AVPlayerStatus.ReadyToPlay {
-            if player.currentItem != nil {
-                if player.currentItem.status == AVPlayerItemStatus.ReadyToPlay {
-                    println("PLAYING \(filePath)")
-                    player.seekToTime(getSeekTime())
-                    player.play()
-                } else {
-                    if player.currentItem.status == AVPlayerItemStatus.Failed {
-                        println("failed!")
-                    }
-                    println("fuck you")
-                }
-            } else {
-                println("current item is nil")
-            }
-        } else {
-            println("player is not ready")
-        }
-    }
-    
-    func getSeekTime() -> CMTime {
-        let currentItemDuration = player.currentItem!.duration
-        let duration = CMTimeGetSeconds(currentItemDuration)
-        let seekPosition = duration * Float64(position)
-
-        return CMTimeMakeWithSeconds(seekPosition, currentItemDuration.timescale)
+        player.play(position: position)
     }
 }
