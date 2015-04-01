@@ -22,7 +22,7 @@ class Player: AVPlayer, AVAudioPlayerDelegate {
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if keyPath == "status" {
             if status == AVPlayerStatus.Failed {
-                println("failed")
+                globals.logger.info("Failed to initialize the player")
             } else {
                 play(position: currentPosition)
             }
@@ -41,20 +41,20 @@ class Player: AVPlayer, AVAudioPlayerDelegate {
         if status == AVPlayerStatus.ReadyToPlay {
             if currentItem != nil {
                 if currentItem.status == AVPlayerItemStatus.ReadyToPlay {
-                    println("PLAYING")
+                    globals.logger.info("Playing \(currentItem)")
                     seekToTime(getSeekTime())
                     super.play()
                 } else {
                     if currentItem.status == AVPlayerItemStatus.Failed {
-                        println("audio item failed")
+                        globals.logger.info("Audio item failed")
                     }
-                    println("audio item is not ready yet")
+                    globals.logger.info("Audio item is not ready yet")
                 }
             } else {
-                println("current item is nil")
+                globals.logger.info("Current item is nil")
             }
         } else {
-            println("player is not ready")
+            globals.logger.info("Player is not ready")
         }
     }
     
