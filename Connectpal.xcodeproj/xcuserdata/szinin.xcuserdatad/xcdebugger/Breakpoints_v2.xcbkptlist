@@ -234,13 +234,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Connectpal/AudioPlayer.swift"
-            timestampString = "449575013.820322"
+            timestampString = "449595643.34826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "AudioPlayer"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Connectpal/AudioPlayer.swift"
+            timestampString = "449637123.845239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "onPlay()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

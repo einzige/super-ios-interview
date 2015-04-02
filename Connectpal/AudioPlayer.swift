@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-@IBDesignable class AudioPlayer: DesignableView {
+@IBDesignable class AudioPlayer: DesignableView, PlayableDelegate {
     override var nibName: String? { return "AudioPlayer" }
     
     @IBOutlet weak var title: UILabel!
@@ -10,6 +10,14 @@ import AVFoundation
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var seekTarget: UIView!
     
+    @IBAction func onPlayButtonClicked() {
+        if player.playing {
+            player.pause()
+        } else {
+            player.play(position: position)
+        }
+    }
+    
     var filePath: String? = "https://connectpal-media.s3.amazonaws.com/9e212140d69511e482582df3baba0229__a8beb860d69511e49f659554a76238a2____03-29-15---Andy-Dean---Whole-Show.mp3"
     
     private var _textColor = UIColor.blackColor()
@@ -17,7 +25,9 @@ import AVFoundation
     private var _item: AVPlayerItem?
     
     lazy var player: Player = {
-        return Player(playerItem: self.item)
+        let result = Player(playerItem: self.item)
+        result.delegate = self
+        return result
     }()
     
     lazy var item: AVPlayerItem = {
@@ -76,5 +86,15 @@ import AVFoundation
         
         progressBar.setProgress(position, animated: true)
         player.play(position: position)
+    }
+    
+    func onPause() {
+        playButton.setTitle("▶︎", forState: UIControlState.Normal)
+    }
+    
+    func onPlay() {
+        let font = playButton.titleLabel!.font
+        //playButton.titleLabel.font = font.set
+        playButton.setTitle("▌▌", forState: UIControlState.Normal)
     }
 }

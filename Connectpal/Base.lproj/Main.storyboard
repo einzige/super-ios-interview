@@ -43,8 +43,8 @@
                                     <segue destination="slM-a1-3Mk" kind="custom" identifier="login_success" id="qxg-1L-5zK"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-mz-hKK" customClass="AudioPlayer" customModule="Connectpal" customModuleProvider="target">
-                                <rect key="frame" x="47" y="254" width="226" height="43"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-mz-hKK" customClass="AudioPlayer" customModule="Connectpal" customModuleProvider="target">
+                                <rect key="frame" x="47" y="262" width="226" height="43"/>
                                 <color key="tintColor" red="1" green="0.98431372549019602" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -60,7 +60,10 @@
                             <constraint firstAttribute="centerX" secondItem="QTQ-kC-NsJ" secondAttribute="centerX" id="eLo-Ee-wRL"/>
                             <constraint firstItem="jQX-Bb-XCs" firstAttribute="centerX" secondItem="QTQ-kC-NsJ" secondAttribute="centerX" id="gy3-Db-BVz"/>
                             <constraint firstAttribute="centerX" secondItem="jQX-Bb-XCs" secondAttribute="centerX" id="lWF-52-P3s"/>
+                            <constraint firstAttribute="centerX" secondItem="7Eu-mz-hKK" secondAttribute="centerX" id="llX-ph-doH"/>
                             <constraint firstAttribute="centerX" secondItem="izJ-Dr-Mzp" secondAttribute="centerX" id="mJI-a4-3dX"/>
+                            <constraint firstItem="7Eu-mz-hKK" firstAttribute="top" secondItem="jQX-Bb-XCs" secondAttribute="bottom" constant="41" id="u81-UB-tk2"/>
+                            <constraint firstItem="jQX-Bb-XCs" firstAttribute="width" secondItem="7Eu-mz-hKK" secondAttribute="width" id="vp2-PY-dLA"/>
                             <constraint firstItem="jQX-Bb-XCs" firstAttribute="centerX" secondItem="Dap-fP-sCz" secondAttribute="centerX" id="yhv-zM-fx5"/>
                         </constraints>
                     </view>

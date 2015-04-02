@@ -1,8 +1,21 @@
 import UIKit
 import AVFoundation
 
+@objc protocol PlayableDelegate: NSObjectProtocol {
+    optional func onPlayerFailure()
+    optional func beforeAudioLoad()
+    optional func onPlay()
+    optional func onFinishedPlaying()
+    optional func onStoppedPlaying()
+    optional func onPause()
+}
+
 class Player: AVPlayer, AVAudioPlayerDelegate {
     var currentPosition: Float = 0.0
+    var delegate: PlayableDelegate?
+    var playing: Bool {
+        return rate > 0 && error == nil
+    }
     
     override init() {
         super.init()
@@ -23,25 +36,49 @@ class Player: AVPlayer, AVAudioPlayerDelegate {
         if keyPath == "status" {
             if status == AVPlayerStatus.Failed {
                 globals.logger.info("Failed to initialize the player")
-            } else {
+                delegate?.onPlayerFailure?()
+            } else if status == AVPlayerStatus.ReadyToPlay {
                 play(position: currentPosition)
+            } else if status == AVPlayerStatus.Unknown {
+                globals.logger.info("Player status changed to unknown")
             }
         }
     }
     
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        if flag {
+            delegate?.onFinishedPlaying?()
+        } else {
+            delegate?.onStoppedPlaying?()
+        }
+    }
+    
+    override func pause() {
+        println("PAUSE")
+        super.pause()
+        delegate?.onPause?()
+    }
+    
+    override func play() {
+        play(position: currentPosition)
+    }
+    
     func play(item: AVPlayerItem) {
+        super.pause()
         currentPosition = 0.0
         observeItem(item)
     }
 
     func play(position: Float = 0.0) {
-        pause()
+        super.pause()
         currentPosition = position
         
         if status == AVPlayerStatus.ReadyToPlay {
             if currentItem != nil {
                 if currentItem.status == AVPlayerItemStatus.ReadyToPlay {
-                    globals.logger.info("Playing \(currentItem)")
+                    println("PLAY")
+                    delegate?.onPlay?()
+                    //globals.logger.info("Playing \(currentItem)")
                     seekToTime(getSeekTime())
                     super.play()
                 } else {
@@ -59,6 +96,7 @@ class Player: AVPlayer, AVAudioPlayerDelegate {
     }
     
     private func observeItem(item: AVPlayerItem) {
+        delegate?.beforeAudioLoad?()
         replaceCurrentItemWithPlayerItem(item)
         item.addObserver(self, forKeyPath: "status", options: nil, context: nil)
     }

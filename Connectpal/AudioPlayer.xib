@@ -28,11 +28,13 @@
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnv-EL-oRi">
+                <button autoresizesSubviews="NO" opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Nnv-EL-oRi">
                     <rect key="frame" x="0.0" y="9" width="21" height="30"/>
-                    <state key="normal" title="▶︎">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="▶︎"/>
+                    <connections>
+                        <action selector="onPlayButtonClicked" destination="-1" eventType="touchUpInside" id="VIu-vT-4e3"/>
+                    </connections>
                 </button>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1gR-2g-xLR">
                     <rect key="frame" x="66" y="23" width="526" height="2"/>
