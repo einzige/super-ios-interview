@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudioPlayer" customModule="Connectpal" customModuleProvider="target">
             <connections>
+                <outlet property="loader" destination="7kw-vk-b3w" id="n53-2P-acN"/>
                 <outlet property="playButton" destination="Nnv-EL-oRi" id="RRT-Uj-VvK"/>
                 <outlet property="progressBar" destination="1gR-2g-xLR" id="fxU-3t-oq8"/>
                 <outlet property="seekTarget" destination="kZh-aP-0z8" id="JFD-RP-rUd"/>
@@ -30,7 +31,7 @@
                 </label>
                 <button autoresizesSubviews="NO" opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Nnv-EL-oRi">
                     <rect key="frame" x="0.0" y="9" width="21" height="30"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
                     <state key="normal" title="▶︎"/>
                     <connections>
                         <action selector="onPlayButtonClicked" destination="-1" eventType="touchUpInside" id="VIu-vT-4e3"/>
@@ -46,12 +47,16 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-vk-b3w">
+                    <rect key="frame" x="572" y="14" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.24135749040000001" green="0.70977969269999996" blue="0.90822285349999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="vuF-EN-Bl3" firstAttribute="leading" secondItem="1gR-2g-xLR" secondAttribute="leading" id="9Tq-76-OEe"/>
                 <constraint firstItem="Nnv-EL-oRi" firstAttribute="centerY" secondItem="27M-HY-hSJ" secondAttribute="centerY" id="JzK-SR-MT7"/>
                 <constraint firstAttribute="trailing" secondItem="vuF-EN-Bl3" secondAttribute="trailing" id="QGH-oy-i0d"/>
+                <constraint firstAttribute="trailing" secondItem="7kw-vk-b3w" secondAttribute="trailing" constant="8" id="Ri2-dJ-Jeq"/>
                 <constraint firstItem="vuF-EN-Bl3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="ZRU-Uo-cVR"/>
                 <constraint firstItem="1gR-2g-xLR" firstAttribute="width" secondItem="kZh-aP-0z8" secondAttribute="width" id="efJ-Il-WcI"/>
                 <constraint firstItem="kZh-aP-0z8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="feJ-eJ-1Oc"/>

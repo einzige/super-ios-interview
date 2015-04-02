@@ -4,6 +4,7 @@ import AVFoundation
 @IBDesignable class AudioPlayer: DesignableView, PlayableDelegate {
     override var nibName: String? { return "AudioPlayer" }
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var timing: UILabel!
     @IBOutlet weak var playButton: UIButton!
@@ -14,6 +15,15 @@ import AVFoundation
         if player.playing {
             player.pause()
         } else {
+            displayPlayMode()
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                var newBounds = self.view.bounds
+                newBounds.size.width = self.view.bounds.width - 40
+                
+                self.view.bounds = newBounds
+                self.view.layoutIfNeeded()
+                self.initPendingState()
+            }, completion: nil)
             player.play(position: position)
         }
     }
@@ -69,6 +79,7 @@ import AVFoundation
     }
     
     override func didMoveToSuperview() {
+        loader.stopAnimating()
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("onSeek:"))
         seekTarget.addGestureRecognizer(tapRecognizer)
     }
@@ -93,8 +104,15 @@ import AVFoundation
     }
     
     func onPlay() {
-        let font = playButton.titleLabel!.font
-        //playButton.titleLabel.font = font.set
-        playButton.setTitle("▌▌", forState: UIControlState.Normal)
+        displayPlayMode()
+    }
+    
+    private func displayPlayMode() {
+        playButton.setTitle("❚❚", forState: UIControlState.Normal)
+    }
+    
+    private func initPendingState() -> Bool{
+        loader.startAnimating()
+        return true
     }
 }
